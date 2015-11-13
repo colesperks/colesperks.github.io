@@ -215,7 +215,6 @@ h1,h2,h3,h4,h5,p,a {
 
 
 body {
-
   border: solid $white 20px;
 }
 
@@ -285,6 +284,12 @@ a, a:hover {
     width: 80%;
     font-size: 22px;
   }
+  body {
+  border: solid $white 15px;
+  }
+  #particles-js{
+  height: 96vh;
+  }
 }
 
 /* Extra Small Devices, Phones */
@@ -298,6 +303,12 @@ a, a:hover {
   }
   .socialbtns, .socialbtns ul, .socialbtns li {
     padding: 2px;
+  }
+  body {
+  border: solid $white 10px;
+  }
+  #particles-js{
+  height: 97vh;
   }
 }
 
