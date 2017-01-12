@@ -2,76 +2,28 @@
 layout: default
 ---
 
-<div class="home">
-  <div class="logo-section">
-    <div class="logo-txt">
-      <span class="logo-inner">
-        <header>
-          <h1 class="logo">CP.</h1>
-        </header>
-    </span>
+<h1 class="f2 f1-l mb3">Cole Perkins</h1>
+<h2   class="f4 ">is a product designer and maker of <span data-text="internet" class="glitch">computer</span> things</h2>
+
+<div class="mh5 mh7-l mt5 pt4-l">
+  <div class="tc mw-300 w-100 square">
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg width="100%" height="100%" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="none" x="0" y="0" width="300" height="300"></rect>
+    </g>
+</svg>
   </div>
 </div>
 
-
-<div class="content-section">
-  <div class="content-text">
-    <span class="aa_inner">
-      <div class="site row">
-        <div class="container-fluid">
-          <div class="main-heading text-center">
-            <div class="">
-              <h3 class="intro-text">COLE PERKINS IS A WEB DESIGNER & DEVELOPER CURRENTLY BASED IN VICTORIA, CANADA</h3>
-            </div>
-            <div align="center" class="socialbtns">
-              <ul class="button-hover">
-                <li><a href="https://dribbble.com/colesperks" target="_blank" class=" fa fa-dribbble"></a></li>
-                <li><a href="https://twitter.com/colesperks" target="_blank" class="fa fa-twitter"></a></li>
-                <li><a href="https://www.instagram.com/colesperks/" target="_blank" class="fa fa-instagram"></a></li>
-                <li><a href="https://ca.linkedin.com/in/coleperkins" target="_blank" class="fa fa-linkedin"></a></li>
-                <li><a href="https://github.com/colesperks" target="_blank" class="fa fa-github"></a></li>
-              </ul>
-            </div>
-            <div class="buttton-container">
-              <div class="button button-hover">
-                <a href="mailto:coleperkins@outlook.com" >CONTACT</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<!-- particles.js container -->
-<div id="particles-js"></div>
 
 <!-- scripts -->
-<script src="../particles.js"></script>
 <script src="js/app.js"></script>
 
 <!-- stats.js -->
 <script src="js/lib/stats.js"></script>
-<script>
-  var count_particles, stats, update;
-  stats = new Stats;
-  stats.setMode(0);
-  stats.domElement.style.position = 'absolute';
-  stats.domElement.style.left = '0px';
-  stats.domElement.style.top = '0px';
-  document.body.appendChild(stats.domElement);
-  count_particles = document.querySelector('.js-count-particles');
-  update = function() {
-    stats.begin();
-    stats.end();
-    if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-      count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-    }
-    requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-</script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
  <script>
