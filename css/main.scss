@@ -3,298 +3,127 @@
 ---
 @charset "utf-8";
 
-// Google Font - Montserrat
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+// Google Font - Space Mono
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
 //
-//Font Awesome
-@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
 
-
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-// Colors
-$black: #222222;
-$white:  rgba(255, 255, 255, 0.8);
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-/* =============================================================================
-   My CSS
-   ========================================================================== */
-
-/* ---- base ---- */
-* {
-  box-sizing: border-box;
-}
-
-html,body{
-  width:100vw;
-  height:100vh;
-  background:#111;
-}
-
-canvas{
-  display:block;
-  vertical-align:bottom;
-}
-
-
-/* ---- stats.js ---- */
-
-.count-particles{
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13E8E9;
-  font-size: .8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
-}
-
-.js-count-particles{
-  font-size: 1.1em;
-}
-
-#stats,
-.count-particles{
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-
-#stats{
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
-
-.count-particles{
-  border-radius: 0 0 3px 3px;
-}
-
-
-/* ---- particles.js container ---- */
-
-#particles-js{
-   z-index: 4;
-  height: 100%;
-  height: 100vh;
-  background: $black;
-
-}
-
-/* ---- reset ---- */
+$main-font:'Space Mono', courier, monospace;
 
 body {
-  margin: 0;
-  font:normal 75% Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-canvas {
-  display: block;
-  vertical-align: bottom;
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.content-section {
-  position: absolute;
-  z-index: 5;
-  top: 40%;
+.Site-content {
+  flex: 1;
+}
+
+.co-ords {
+  bottom:0;
   right: 0;
-  left: 0;
-  margin: 0  auto;
 }
-
-.content-text {
-  text-align: center;
-}
-
-
-.logo-section {
-  position: absolute;
-  z-index: 5;
-  top: 1%;
-  right: 0;
-  left: 1%;
-  margin: 0  auto;
-}
-
-.logo-text {
-  text-align: center;
-}
-
-
-.aa_of {
-  padding: 1rem;
-  color: #ffffff;
-  background: #583862;
-}
-
-
-
-
-
-
-
-
-
-
-/********************************************
-MY STYLES
-********************************************/
-
-//Fonts
-$main-font:'Montserrat', sans-serif;
-
-
-//Border
-$bdr: solid $white 2px;
-
-// Mixins
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-          border-radius: $radius;
-}
-
-@mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
-}
-
 
 h1,h2,h3,h4,h5,p,a {
   font-family: $main-font;
-  color: $white;
+  font-weight: normal;
 }
 
-.logo {
-  font-size: 44px;
-  margin-left:40px;
+.mw-300 {
+  max-width: 280px;
+  margin: auto;
+}
+
+/*****************
+Animation
+*****************/
+.square {
+  -webkit-animation: rotation 60s infinite linear;
+  -moz-animation: rotation 60s infinite linear;
+  -o-animation: rotation 60s infinite linear;
+  animation: rotation 60s infinite linear;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  background-image: linear-gradient(-90deg, #B28AF8 2%, #F086CC 100%);
+
+    &:hover {
+      -webkit-animation: rotation 0.3s infinite linear;
+      -moz-animation: rotation 0.3s infinite linear;
+      -o-animation: rotation 0.3s infinite linear;
+      animation: rotation 0.3s infinite linear;
+
+    }
+}
+
+@-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to   {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to   {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to   {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+    from {transform: rotate(0deg);}
+    to   {transform: rotate(359deg);}
 }
 
 
-.intro-text {
-  width: 50%;
-  margin:auto;
-  margin-bottom: 10px;
-  font-size: 24px;
+// Glitch Animation
+
+.glitch{
+  color:white;
+  position:relative;
 }
-
-a, a:hover {
-  text-decoration: none;
-  @include transition( .4s ease)
-}
-
-.socialbtns, .socialbtns ul, .socialbtns li {
-  margin: 0;
-  padding: 5px;
-
-}
-
-.socialbtns li {
-    list-style: none outside none;
-    display: inline-block;
-}
-
-.socialbtns .fa {
-  @include border-radius(22px);
-  width: 35px;
-  height: 35px;
-  color: $white;
-  border: $bdr;
-  padding-top: 8px;
-}
-
-.socialbtns .fa {
-  font-size:14px;
-}
-
-.button {
-  margin-top: 40px;
-  a{
-    @include border-radius(1px);
-    color: $white;
-    font-size: 12px;
-    font-weight: 700;
-    padding: 15px 55px;
+@keyframes noise-anim{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
   }
 }
-
-.button-hover a {
-  border: 2px solid $white;
-  &:hover {
-  color: $black;
-  background-color: $white;
-  }
+.glitch:after{
+  content:attr(data-text);
+  position:absolute;
+  left:3px;
+  text-shadow:-1px 0 red;
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim 2s infinite linear alternate-reverse;
 }
 
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
-  .logo {
-    font-size:40px;
-  }
-  .intro-text {
-    width: 80%;
-    font-size: 22px;
+@keyframes noise-anim-2{
+  $steps:20;
+  @for $i from 0 through $steps{
+    #{percentage($i*(1/$steps))}{
+      clip:rect(random(100)+px,9999px,random(100)+px,0);
+    }
   }
 }
-
-/* Extra Small Devices, Phones */
-  @media only screen and (max-width : 480px) {
-  .logo {
-    font-size:36px;
-  }
-  .intro-text {
-    width: 80%;
-    font-size: 20px;
-  }
-  .socialbtns, .socialbtns ul, .socialbtns li {
-    padding: 2px;
-  }
+.glitch:before{
+  content:attr(data-text);
+  position:absolute;
+  left:-3px;
+  text-shadow:1px 0 blue;
+  top:0;
+  color:white;
+  background:black;
+  overflow:hidden;
+  clip:rect(0,900px,0,0);
+  animation:noise-anim-2 4s infinite linear alternate-reverse;
 }
-
-
