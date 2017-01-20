@@ -3,13 +3,6 @@
 ---
 @charset "utf-8";
 
-// Google Font - Space Mono
-@import url('https://fonts.googleapis.com/css?family=Space+Mono');
-//
-
-
-$main-font:'Space Mono', courier, monospace;
-
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,100 +23,26 @@ body {
   right: 0;
 }
 
-h1,h2,h3,h4,h5,p,a {
-  font-family: $main-font;
-  font-weight: normal;
+a.red1:hover { color: #FF0000; }
+a.yellow1:hover { color: #FCFF00; }
+a.green1:hover { color: #00FF7B; }
+a.blue1:hover { color: #000EFF; }
+a.purple1:hover { color: #A100FF; }
+
+a {
+  cursor: pointer;
 }
 
-.mw-300 {
-  max-width: 280px;
-  margin: auto;
-}
-
-/*****************
-Animation
-*****************/
-.square {
-  -webkit-animation: rotation 60s infinite linear;
-  -moz-animation: rotation 60s infinite linear;
-  -o-animation: rotation 60s infinite linear;
-  animation: rotation 60s infinite linear;
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-  -moz-transform-origin: 50% 50%;
-  background-image: linear-gradient(-90deg, #B28AF8 2%, #F086CC 100%);
-
-    &:hover {
-      -webkit-animation: rotation 0.3s infinite linear;
-      -moz-animation: rotation 0.3s infinite linear;
-      -o-animation: rotation 0.3s infinite linear;
-      animation: rotation 0.3s infinite linear;
-
-    }
-}
-
-@-webkit-keyframes rotation {
-    from {-webkit-transform: rotate(0deg);}
-    to   {-webkit-transform: rotate(359deg);}
-}
-@-moz-keyframes rotation {
-    from {-moz-transform: rotate(0deg);}
-    to   {-moz-transform: rotate(359deg);}
-}
-@-o-keyframes rotation {
-    from {-o-transform: rotate(0deg);}
-    to   {-o-transform: rotate(359deg);}
-}
-@keyframes rotation {
-    from {transform: rotate(0deg);}
-    to   {transform: rotate(359deg);}
-}
-
-
-// Glitch Animation
-
-.glitch{
-  color:white;
-  position:relative;
-}
-@keyframes noise-anim{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
-    }
-  }
-}
-.glitch:after{
-  content:attr(data-text);
-  position:absolute;
-  left:3px;
-  text-shadow:-1px 0 red;
-  top:0;
-  color:white;
-  background:black;
-  overflow:hidden;
-  clip:rect(0,900px,0,0);
-  animation:noise-anim 2s infinite linear alternate-reverse;
-}
-
-@keyframes noise-anim-2{
-  $steps:20;
-  @for $i from 0 through $steps{
-    #{percentage($i*(1/$steps))}{
-      clip:rect(random(100)+px,9999px,random(100)+px,0);
-    }
-  }
-}
-.glitch:before{
-  content:attr(data-text);
-  position:absolute;
-  left:-3px;
-  text-shadow:1px 0 blue;
-  top:0;
-  color:white;
-  background:black;
-  overflow:hidden;
-  clip:rect(0,900px,0,0);
-  animation:noise-anim-2 4s infinite linear alternate-reverse;
+#colourSpectrum {
+  // border-top: 10px solid white;
+  height: 4px;
+  background: red; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-linear-gradient(left,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(left,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(left,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
+  /* Standard syntax */
+  background: linear-gradient(to right,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
 }
