@@ -1,48 +1,62 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+
 @charset "utf-8";
 
+@import url("https://rsms.me/inter/inter.css");
+html {
+	font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+	html {
+		font-family: "Inter var", sans-serif;
+	}
+}
+
+/* Variables */
+
+:root {
+	--font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		"Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+		"Helvetica Neue", sans-serif;
+	--font-weight: normal;
+	--bold-font-weight: bold;
+	--title-font-family: var(--font-family);
+	--title-font-weight: var(--bold-font-weight);
+	--body-foreground: #111;
+	--body-background: #fff;
+	--link-foreground: #0881b3;
+	--light-foreground: #949494;
+}
+
 body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	max-width: 560px;
+	font-family: var(--font-family);
 }
 
 .Site {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 .Site-content {
-  flex: 1;
+	flex: 1;
 }
 
 .co-ords {
-  bottom:0;
-  right: 0;
+	bottom: 0;
+	right: 0;
 }
 
-a.red1:hover { color: #FB0007; }
-a.yellow1:hover { color: #FFFF0B; }
-a.green1:hover { color: #23FF07; }
-a.blue1:hover { color: #000EFF; }
-a.purple1:hover { color: #FB00FF; }
+p {
+	// font-size: 17px;
+	line-height: 1.6;
+}
 
 a {
-  cursor: pointer;
-}
-
-#colourSpectrum {
-  // border-top: 10px solid white;
-  height: 4px;
-  background: red; /* For browsers that do not support gradients */
-  /* For Safari 5.1 to 6.0 */
-  background: -webkit-linear-gradient(left,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
-  /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(left,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
-  /* For Fx 3.6 to 15 */
-  background: -moz-linear-gradient(left,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
-  /* Standard syntax */
-  background: linear-gradient(to right,#FF0000,#FCFF00,#00FF7B,#000EFF,#A100FF);
+	color: #666;
 }
